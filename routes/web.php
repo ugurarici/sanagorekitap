@@ -40,15 +40,17 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('yeni', 'QuestionController@create')->name('question.create');
+Route::get('oneriler', 'QuestionController@index')->name('question.index');
 
-Route::post('s', 'QuestionController@store')->name('question.store');
+Route::get('oneriler/iste', 'QuestionController@create')->name('question.create');
 
-Route::get('s/{Question}', 'QuestionController@show')->name('question.show');
+Route::post('oneriler', 'QuestionController@store')->name('question.store');
 
-Route::get('k', 'BookController@index')->name('book.index');
+Route::get('oneriler/{question}', 'QuestionController@show')->name('question.show');
 
-Route::get('k/{Book}', 'BookController@show')->name('book.show');
+Route::get('kitaplar', 'BookController@index')->name('book.index');
 
-Route::get('y/{Author}', 'AuthorController@show')->name('author.show');
+Route::get('kitaplar/{book}', 'BookController@show')->name('book.show');
+
+Route::get('yazarlar/{author}', 'AuthorController@show')->name('author.show');
 

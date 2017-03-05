@@ -17,6 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->nullable();
             $table->text('body');
+            $table->string('user_email')->nullable();
             $table->timestamps();
         });
     }
